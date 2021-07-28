@@ -1,6 +1,14 @@
-import React from 'react';
-import { StyleSheet, Text, View, Share, TouchableOpacity } from 'react-native';
+import React, { useEffect } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Share,
+  TouchableOpacity,
+  Alert,
+} from 'react-native';
 import * as Linking from 'expo-linking';
+import axios from 'axios';
 
 function MainPage() {
   const share = () => {
@@ -8,9 +16,11 @@ function MainPage() {
       message: '공유하기 기능!',
     });
   };
+
   const link = () => {
     Linking.openURL('https://www.naver.com');
   };
+
   return (
     <>
       <View style={styles.container}>
